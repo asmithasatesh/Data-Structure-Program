@@ -92,25 +92,25 @@ namespace DataStructurePrograms
         {
             Node<T> newNode = new Node<T>(data);
             Node<T> temp = head;
-            if (head == null || newNode.idata <= head.idata)
+            if (temp == null || Convert.ToInt32(newNode.data) <= Convert.ToInt32(head.data))
             {
                 newNode.next = head;
                 head = newNode;
             }
-            else if (head.next == null && head.idata < newNode.idata)
+            else if (head.next == null && Convert.ToInt32((head.data))< Convert.ToInt32(newNode.data))
             {
                 head.next = newNode;
             }
             else
             {
-                if(temp.next.idata > newNode.idata)
+                if(Convert.ToInt32(temp.next.data) > Convert.ToInt32(newNode.data))
                 {
                     newNode.next = temp.next;
                     temp.next = newNode;
                 }
                 else
                 {
-                    while (temp.next != null && temp.next.idata < newNode.idata)
+                    while (temp.next != null && Convert.ToInt32(temp.next.data) < Convert.ToInt32(newNode.data))
                     {
                         temp = temp.next;
                     }
@@ -119,7 +119,45 @@ namespace DataStructurePrograms
                 }
             }
         }
+        public void Enqueue(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+            Append(newNode);
+        }
 
+        //Add data at rear
+        public void Append(Node<T> newNode)
+        {
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node<T> temp = GetLastNode();
+                temp.next = newNode;
+
+            }
+        }
+        public Node<T> GetLastNode()
+        {
+            Node<T> temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            return temp;
+        }
+        public void Dequeue()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("\nQueue is empty! Nothing to Pop");
+                return;
+            }
+            Console.WriteLine("\nDE QUEUED ELEMENT: {0}", head.data);
+            head= head.next;
+        }
         //Pep top element
         public void Pop()
         {

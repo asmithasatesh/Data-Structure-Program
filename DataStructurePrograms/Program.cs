@@ -10,6 +10,8 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 1-For Unordered List");
             Console.WriteLine("Enter 2-For Ordered List");
             Console.WriteLine("Enter 3-Check for Balanced Parentheses in an expression");
+            Console.WriteLine("Enter 4-Simulate Banking Cash Counter");
+
 
 
             int ch = Convert.ToInt32(Console.ReadLine());
@@ -26,6 +28,10 @@ namespace DataStructurePrograms
                 case 3:
                     BalanceParentheses<string> balanceParenthesis = new BalanceParentheses<string>();
                     balanceParenthesis.GetInput();
+                    break;
+                case 4:
+                    BankingCashCounter<int> bankingCashCounter = new BankingCashCounter<int>();
+                    bankingCashCounter.PeopleInputPanel();
                     break;
             }
         }
