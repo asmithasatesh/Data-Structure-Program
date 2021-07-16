@@ -12,6 +12,8 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 3-Check for Balanced Parentheses in an expression");
             Console.WriteLine("Enter 4-Simulate Banking Cash Counter");
             Console.WriteLine("Enter 5-Palindrome Checker");
+            Console.WriteLine("Enter 6-Prime Numbers in 2D array");
+
 
 
 
@@ -38,6 +40,9 @@ namespace DataStructurePrograms
                 case 5:
                     PalindromeChecker<char> palindrome = new PalindromeChecker<char>();
                     palindrome.CheckPalindrome();
+                    break;
+                case 6:
+                    PrimeNumbers.PrimeChecker(0,1000);
                     break;
             }
         }
