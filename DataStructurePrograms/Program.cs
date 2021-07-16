@@ -11,6 +11,8 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 2-For Ordered List");
             Console.WriteLine("Enter 3-Check for Balanced Parentheses in an expression");
             Console.WriteLine("Enter 4-Simulate Banking Cash Counter");
+            Console.WriteLine("Enter 5-Palindrome Checker");
+
 
 
 
@@ -32,6 +34,10 @@ namespace DataStructurePrograms
                 case 4:
                     BankingCashCounter<int> bankingCashCounter = new BankingCashCounter<int>();
                     bankingCashCounter.PeopleInputPanel();
+                    break;
+                case 5:
+                    PalindromeChecker<char> palindrome = new PalindromeChecker<char>();
+                    palindrome.CheckPalindrome();
                     break;
             }
         }

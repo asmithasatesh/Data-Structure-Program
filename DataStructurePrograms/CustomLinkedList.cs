@@ -139,6 +139,7 @@ namespace DataStructurePrograms
 
             }
         }
+        //Return Last node in Linked List
         public Node<T> GetLastNode()
         {
             Node<T> temp = head;
@@ -148,6 +149,7 @@ namespace DataStructurePrograms
             }
             return temp;
         }
+        //Delete head or first Node
         public void Dequeue()
         {
             if (head == null)
@@ -173,6 +175,7 @@ namespace DataStructurePrograms
                 Console.WriteLine("Linked List is Empty!There is nothing to delete");
             }
         }
+        //Display Top element
         public void Peek()
         {
             if (head != null)
@@ -186,6 +189,7 @@ namespace DataStructurePrograms
             }
         }
 
+        //return 1 if Linked List not Empty else return 0
         public int IsEmpty()
         {
             if(head!=null)
@@ -197,6 +201,22 @@ namespace DataStructurePrograms
                 return 0;
             }
         }
-   
+        //Pop elements of queue
+        public string DequeuePalindrome()
+        {
+            string reverseWord = "";
+            while (head != null)
+            {
+                if (head == null)
+                {
+                    Console.WriteLine("\nQueue is empty! Nothing to Pop");
+                }
+                Console.WriteLine("DE QUEUED ELEMENT: {0}", head.data);
+                reverseWord = head.data + reverseWord;
+                head = head.next;
+            }
+            return reverseWord;
+        }
+
     }
 }

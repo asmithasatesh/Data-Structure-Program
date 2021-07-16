@@ -6,15 +6,18 @@ namespace DataStructurePrograms
 {
     class BankingCashCounter<T>
     {
+        //Set bank Balance
         int bankBalance = 2000000;
         public void PeopleInputPanel()
         {
+            //Enter number of people in Queue
             Console.WriteLine("Enter the number of people in Queue");
             int people = Convert.ToInt32(Console.ReadLine());
             CustomLinkedList<int> customLinkedList = new CustomLinkedList<int>();
             for(int i=1;i<=people;i++)
             {
                 customLinkedList.Enqueue(i);
+                //Call Services method to deposit or withdraw
                 BankServices();
                 customLinkedList.Dequeue();
             }
