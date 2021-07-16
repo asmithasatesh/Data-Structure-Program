@@ -42,7 +42,7 @@ namespace DataStructurePrograms
                     palindrome.CheckPalindrome();
                     break;
                 case 6:
-                    PrimeNumbers.PrimeChecker(0,1000);
+                    PrimeNumbers<int>.PrimeChecker(0,1000);
                     break;
             }
         }
