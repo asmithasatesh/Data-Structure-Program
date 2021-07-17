@@ -13,10 +13,7 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 4-Simulate Banking Cash Counter");
             Console.WriteLine("Enter 5-Palindrome Checker");
             Console.WriteLine("Enter 6-Prime Numbers in 2D array");
-
-
-
-
+            Console.WriteLine("Enter 7-Number of Binary Search Tree");
 
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
@@ -43,6 +40,13 @@ namespace DataStructurePrograms
                     break;
                 case 6:
                     PrimeNumbers<int>.PrimeChecker(0,1000);
+                    break;
+                case 7:
+                    NumbertofBST numbertofBST = new NumbertofBST();
+                    Console.WriteLine("Enter the size of tree");
+                    int number = Convert.ToInt32(Console.ReadLine());
+                    int count=numbertofBST.NumberOfTree(number);
+                    Console.WriteLine("Total count of BST with size {0} is: {1}", number, count);
                     break;
             }
         }
