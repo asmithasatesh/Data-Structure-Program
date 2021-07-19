@@ -51,7 +51,7 @@ namespace DataStructurePrograms
                     Console.WriteLine("Total count of BST with size {0} is: {1}", number, count);
                     break;
                 case 8:
-                    HashedSlots<int> hashedSlots = new HashedSlots<int>(10);
+                    HashedSlots<int> hashedSlots = new HashedSlots<int>(11);
                     GetInput(hashedSlots);
                     break;
             }

@@ -1,1 +1,1 @@
-a newData List Linked implementing for used File Text is sample This
+This sample is Text File used implementing Linked List newData a

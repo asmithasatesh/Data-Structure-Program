@@ -27,7 +27,7 @@ namespace DataStructurePrograms
         //Step 1: Get slot number by %size
         public int GetArrayPosition(T key)
         {
-            int position = key.GetHashCode() % size;
+            int position = Convert.ToInt32(key) % size;
             return (Math.Abs(position));
 
         }
@@ -46,7 +46,7 @@ namespace DataStructurePrograms
         public string Display()
         {
             string result = "";
-            int count=1;
+
             for (int i = 0; i < size; i++)
             {
                 LinkedList<T> linkedList = item[i];
@@ -54,12 +54,14 @@ namespace DataStructurePrograms
                 {
                     continue;
                 }
+                int count = 1;
                 foreach (T value in linkedList)
                 {
-                    Console.WriteLine("Element {0} of Hash Table is: {1}", count,value);
+                    Console.WriteLine("Element {0} of index {1} in Hash Table is: {2}", count,i,value);
                     result = value.ToString() + " " + result;
                     count++;
                 }
+
             }
             return result;
         }
