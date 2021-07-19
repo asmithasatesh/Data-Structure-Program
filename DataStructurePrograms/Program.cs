@@ -16,6 +16,7 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 6-Prime Numbers in 2D array");
             Console.WriteLine("Enter 7-Number of Binary Search Tree");
             Console.WriteLine("Enter 8-To Search an element in Hash Table");
+            Console.WriteLine("Enter 9-To Print Calender of Given Year and Month");
 
             int ch = Convert.ToInt32(Console.ReadLine());
             switch (ch)
@@ -53,6 +54,10 @@ namespace DataStructurePrograms
                 case 8:
                     HashedSlots<int> hashedSlots = new HashedSlots<int>(11);
                     GetInput(hashedSlots);
+                    break;
+                case 9:
+                    Calendar calendar = new Calendar();
+                    calendar.GetInput();
                     break;
             }
 
