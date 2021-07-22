@@ -52,6 +52,7 @@ namespace DataStructurePrograms
             }
             //Extending Program to Store anagrams
             //Print prime numbers in range 0-100
+
             change = 0;
             for(int k=0;k<10;k++)
             {
@@ -112,6 +113,7 @@ namespace DataStructurePrograms
             //Program 10: Display Anagrams in reverse order using stack
             customStack.Display();
 
+            Console.WriteLine("CHECK" + primeNumbers.GetLength(1));
 
             Console.WriteLine("\n*************************************************************************************************");
             Console.WriteLine("                  DISPLAYING ANAGRAM USING QUEUE in Range ({0} - {1})                   ", start, end);

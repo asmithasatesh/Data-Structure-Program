@@ -29,15 +29,13 @@ namespace DataStructurePrograms
             if(linkedList.Search(searchElement))
             {
                 linkedList.DeleteElement(searchElement);
-                linkedList.Display();
             }
             else
             {
                 linkedList.InsertAtFront(searchElement);
-                linkedList.Display();
             }
 
-            //Write back to File
+            //Write Content back to File
             string StringValues = linkedList.ReturnToString();
             File.WriteAllText(@"D:\Assignments\DataStructurePrograms\DataStructurePrograms\WordFile.txt", StringValues);
         }
