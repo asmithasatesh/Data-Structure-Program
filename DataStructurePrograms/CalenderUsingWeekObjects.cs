@@ -44,7 +44,28 @@ namespace DataStructurePrograms
             }
             return temp;
         }
-
+        //Push operation for Stack
+        public void InsertAtFront(CalenderUsingWeekObjects<T> newNode)
+        {
+            CalenderUsingWeekObjects<T> temp = head;
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+        }
+        //Pop operation for stack
+        public CalenderUsingWeekObjects<T> DeQueue(CalenderUsingWeekObjects<T> stack)
+        {
+            CalenderUsingWeekObjects<T> temp = head;
+            stack.InsertAtFront(temp);
+            return stack;
+        }
+        //Display Calendar
         public void DisplayWeek()
         {
             CalenderUsingWeekObjects<T> temp = head;

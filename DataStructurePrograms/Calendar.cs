@@ -11,6 +11,7 @@ namespace DataStructurePrograms
         public static int year;
         static string[] months = { "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
         public static Queue<CalenderUsingWeekObjects<Calendar>> week= new Queue<CalenderUsingWeekObjects<Calendar>>();
+        public static Queue<CalenderUsingWeekObjects<Calendar>> Stackqueue = new Queue<CalenderUsingWeekObjects<Calendar>>();
 
         //Get input(Year and Month) from user
         public void GetInput()
@@ -21,6 +22,7 @@ namespace DataStructurePrograms
             month = Convert.ToInt32(Console.ReadLine());
 
             CalenderFill();
+            Display();
         }
 
         //Print header of Calendar
@@ -48,31 +50,48 @@ namespace DataStructurePrograms
             int days = DateTime.DaysInMonth(year, month);
             List<string> weeks = new List<string>() { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 
-            for (int i = 1; i <=6; i++)
+            for (int i = 1; i <= 6; i++)
             {
                 //Create object for each day of a week
-                CalenderUsingWeekObjects<Calendar> weekDayQueue=new CalenderUsingWeekObjects<Calendar>();
-                for (int j = 0; j < 7 && day<=days ; j++)
+                //1.Implement using Linked List Queue
+                CalenderUsingWeekObjects<Calendar> weekDayQueue = new CalenderUsingWeekObjects<Calendar>();
+                //2.Implement using Linked List Queue
+                CalenderUsingWeekObjects<Calendar> StackQueue = new CalenderUsingWeekObjects<Calendar>();
+                for (int j = 0; j < 7 && day <= days; j++)
                 {
+                    //WeekDays Object for Queue
                     CalenderUsingWeekObjects<Calendar> calenderUsingWeekObjects;
+                    //WeekDays Object for Stack
+                    CalenderUsingWeekObjects<Calendar> calenderUsingWeekObjectsforStack;
                     //If date is empty ,this part is executed
                     if (i == 1 && j < startDate)
                     {
-                        calenderUsingWeekObjects = new CalenderUsingWeekObjects<Calendar>(weeks[j],"");
+                        calenderUsingWeekObjects = new CalenderUsingWeekObjects<Calendar>(weeks[j], "");
+                        calenderUsingWeekObjectsforStack = new CalenderUsingWeekObjects<Calendar>(weeks[j], "");
                         weekDayQueue.Append(calenderUsingWeekObjects);
+                        StackQueue.InsertAtFront(calenderUsingWeekObjectsforStack);
                         continue;
                     }
                     calenderUsingWeekObjects = new CalenderUsingWeekObjects<Calendar>(weeks[j], Convert.ToString(day));
+                    calenderUsingWeekObjectsforStack = new CalenderUsingWeekObjects<Calendar>(weeks[j], Convert.ToString(day));
                     //Store value of each weekDay object 
                     weekDayQueue.Append(calenderUsingWeekObjects);
+                    StackQueue.InsertAtFront(calenderUsingWeekObjectsforStack);
                     day++;
                 }
                 //Enqueue each week object
+                //1.Implement using Linked List Queue
                 week.Enqueue(weekDayQueue);
+                //2.Implement using Linked List Stack
+                Stackqueue.Enqueue(StackQueue);
             }
-            Display();
         }
-
+        //Method call To implement StackWeek Objects
+        public Queue<CalenderUsingWeekObjects<Calendar>> StackImplementation()
+        {
+            GetInput();
+            return Stackqueue;
+        }
         //Display all days
         public void Display()
         {
@@ -81,6 +100,7 @@ namespace DataStructurePrograms
             {
                 i.DisplayWeek();
             }
+
         }
     }
 }
